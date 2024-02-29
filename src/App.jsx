@@ -3,14 +3,15 @@ import Balance from "./Components/Balance";
 import Header from "./Components/Header";
 import TransactionHistory from "./Components/TransactionHistory";
 import IncomeAndExpense from "./Components/IncomeAndExpense";
+import "./App.css";
 
 export default function App() {
   return (
-    <main className="h-screen bg-slate-100">
-      <div className="flex justify-center items-center absolute md:top-0 top-[150px] md:left-1/4 left-1/2">
+    <main className="flex flex-col justify-center items-center h-screen">
+      <div>
             <Header />
       </div>
-      <div className="flex md:flex-col  md:pt-32 md:flex-col-reverse md:gap-16 gap-32 justify-center items-center h-screen m-0 bg-slate-100">
+      <div className="flex md:gap-16 gap-32 justify-center items-center md:flex-col-reverse">
             <div>
               <AddTransaction />
             </div>
