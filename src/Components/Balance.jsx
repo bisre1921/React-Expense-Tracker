@@ -7,8 +7,8 @@ const Balance = () => {
   const total = amounts.reduce((acc , item) => (acc += item) , 0).toFixed(2);
   return (
     <div className="flex flex-col ">
-        <h3 className="text-lg font-semibold">Your Balance</h3>
-        <h1>${total}</h1>
+        <h3 className="text-lg font-bold">Your Balance</h3>
+        <h1 className="text-green-600 font-bold">${total}</h1>
     </div>
   )
 }

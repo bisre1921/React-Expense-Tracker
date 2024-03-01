@@ -8,7 +8,7 @@ const TransactionHistory = () => {
   return (
     <div>
         <h1>
-          <h3 className="text-lg font-semibold">History</h3>
+          <h3 className="text-lg font-semibold border-b-4">History</h3>
           <ul className="flex flex-col">
             {transactions.map(transaction => (
               <Transactions key={transaction.id} transaction = {transaction} />

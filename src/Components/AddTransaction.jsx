@@ -15,10 +15,12 @@ const AddTransaction = () => {
             amount : +amount
         }
         addTransaction(newTransaction);
+        setText("");
+        setAmount(0);
     }
   return (
     <div>
-        <h1 className="text-lg font-semibold border-b-4 mb-2">Add New Transaction</h1>
+        <h1 className="text-lg font-bold border-b-4 mb-2">Add New Transaction</h1>
         <form action="" onSubmit={handleSubmit}>
             <div className="mb-2">
                 <label htmlFor="">Text</label> <br />
@@ -41,7 +43,7 @@ const AddTransaction = () => {
                 />
             </div>
             <div className="flex justify-center items-center mt-2">
-                <button type="submit" className="border-2 py-1 px-3 rounded-2xl">
+                <button type="submit" className="border-2 py-1 px-3 rounded-2xl text-white bg-green-600 hover:bg-transparent hover:text-black duration-300">
                     Add Transaction
                 </button>
             </div>
