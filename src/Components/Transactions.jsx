@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+//import React, { useState , useContext } from 'react';
 import { MdDelete } from "react-icons/md";
 
 const Transactions = ({transaction}) => {
+  
+
   const sign = transaction.amount < 0 ? "-" : "+";
   return (
     <div>
