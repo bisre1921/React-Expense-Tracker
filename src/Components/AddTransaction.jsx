@@ -1,12 +1,25 @@
-import { useState } from "react"
+import { useState , useContext } from "react"
+import { GlobalContext } from '../Context/GlobalState';
 
 const AddTransaction = () => {
+    const {addTransaction} = useContext(GlobalContext);
+
     const [text , setText] = useState("");
     const [amount , setAmount] = useState(0);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const newTransaction = {
+            id : Math.floor(Math.random() * 1000000) , 
+            text , 
+            amount : +amount
+        }
+        addTransaction(newTransaction);
+    }
   return (
     <div>
         <h1 className="text-lg font-semibold border-b-4 mb-2">Add New Transaction</h1>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
             <div className="mb-2">
                 <label htmlFor="">Text</label> <br />
                 <input 
@@ -28,7 +41,7 @@ const AddTransaction = () => {
                 />
             </div>
             <div className="flex justify-center items-center mt-2">
-                <button className="border-2 py-1 px-3 rounded-2xl">
+                <button type="submit" className="border-2 py-1 px-3 rounded-2xl">
                     Add Transaction
                 </button>
             </div>
